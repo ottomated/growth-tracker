@@ -10,6 +10,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 - [Node.JS](https://github.com/creationix/nvm) (I use the latest version but it shouldn't really matter)
 - [Cairo](https://github.com/Automattic/node-canvas#installation)
+- [MongoDB](https://docs.mongodb.com/manual/installation/)
 
 ### Installing
 

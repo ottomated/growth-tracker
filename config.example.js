@@ -67,6 +67,10 @@ exports.config = {
 			options: {}
 		},
 		*/
+		default: 'mongodb',
+		mongodb: {
+			connectionString: 'mongodb://localhost:27017/growth-tracker'
+		}
 	},
 
 	/**
