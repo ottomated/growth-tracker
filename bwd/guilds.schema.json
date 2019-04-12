@@ -1,0 +1,66 @@
+{
+    "prefix": {
+        "type": "string",
+        "default": "^",
+        "min": null,
+        "max": 4,
+        "array": false,
+        "configurable": true
+    },
+    "language": {
+        "type": "language",
+        "default": "en-US",
+        "min": null,
+        "max": null,
+        "array": false,
+        "configurable": true
+    },
+    "disableNaturalPrefix": {
+        "type": "boolean",
+        "default": false,
+        "min": null,
+        "max": null,
+        "array": false,
+        "configurable": false
+    },
+    "disabledCommands": {
+        "type": "command",
+        "default": [],
+        "min": null,
+        "max": null,
+        "array": true,
+        "configurable": true
+    },
+    "milestone": {
+        "type": "integer",
+        "default": 0,
+        "min": 0,
+        "max": 1000000,
+        "array": false,
+        "configurable": true
+    },
+    "milestoneChannel": {
+        "type": "textchannel",
+        "default": null,
+        "min": null,
+        "max": null,
+        "array": false,
+        "configurable": true
+    },
+    "logChannel": {
+        "type": "textchannel",
+        "default": null,
+        "min": null,
+        "max": null,
+        "array": false,
+        "configurable": true
+    },
+    "counts": {
+        "type": "any",
+        "default": [],
+        "min": null,
+        "max": null,
+        "array": true,
+        "configurable": false
+    }
+}
