@@ -1,5 +1,9 @@
 const { Task } = require('klasa');
 
+const {
+	getEmbed
+} = require('../../util/embed.js');
+
 module.exports = class extends Task {
 
 	constructor(...args) {
