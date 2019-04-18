@@ -36,7 +36,7 @@ module.exports = class extends Command {
 
 	async run(message) {
 		let conf = message.guild.settings.counts;
-		let attachment = new MessageAttachment(Buffer.from(JSON.stringify(conf, null, 2), 'data.json'), 'utf8');
+		let attachment = new MessageAttachment(Buffer.from(JSON.stringify(conf, null, 2), 'utf8'), 'data.json');
 		let embed = getEmbed('Export', 'Attached is exported data for **' + conf.length + '** days.', 6996519, []);
 		message.channel.send({
 			embed: embed,
