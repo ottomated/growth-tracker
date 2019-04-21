@@ -40,7 +40,7 @@ module.exports = class extends Task {
 	}
 
 	async init() {
-		this.client.schedule.clear();
-		this.client.schedule.create('updateCounts', '@daily', { catchUp: true });
+		await this.client.schedule.clear();
+		await this.client.schedule.create('updateCounts', '@daily', { catchUp: true });
 	}
 };
