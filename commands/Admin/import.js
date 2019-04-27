@@ -34,20 +34,27 @@ module.exports = class extends Command {
 
 	async run(message, [...params]) {
 		this.client.guilds.forEach((guild, id) => {
-			let path = __dirname + '/../../bwd/provider/json/guilds/' + id + '.json';
-			console.log(path)
+			let path = __dirname + '/../../import/' + id + '.json';
 			if (fs.existsSync(path)) {
 				let oldConfig = JSON.parse(fs.readFileSync(path, 'utf8'));
-				if (oldConfig.prefix)
-					guild.settings.update('prefix', oldConfig.prefix);
-				if (oldConfig.logChannel)
-					guild.settings.update('channels.log', oldConfig.logChannel);
-				if (oldConfig.milestone)
-					guild.settings.update('milestone', oldConfig.milestone);
-				if (oldConfig.milestoneChannel)
-					guild.settings.update('channels.milestone', oldConfig.milestoneChannel);
-				if (oldConfig.counts)
-					guild.settings.update('counts', oldConfig.counts);
+				if (Array.isArray(oldConfig)) {
+					guild.settings.update('counts', oldConfig);
+				} else {
+					if (oldConfig.prefix)
+						guild.settings.update('prefix', oldConfig.prefix);
+					if (oldConfig.logChannel)
+						guild.settings.update('channels.log', oldConfig.logChannel);
+					if (oldConfig.milestone)
+						guild.settings.update('milestone', oldConfig.milestone);
+					if (oldConfig.milestoneChannel)
+						guild.settings.update('channels.milestone', oldConfig.milestoneChannel);
+					if (oldConfig.counts)
+						guild.settings.update('counts', oldConfig.counts);
+				}
+				message.reply('Imported ' + guild.name);
+			} else {
+
+				message.reply('No input data for ' + guild.name + ', place it in `' + path + '`');
 			}
 		});
 	}
