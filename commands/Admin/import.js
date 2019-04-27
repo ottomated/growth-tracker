@@ -1,5 +1,6 @@
 const { Command } = require('klasa');
 const fs = require('fs');
+const Path = require('path');
 
 module.exports = class extends Command {
 
@@ -34,7 +35,8 @@ module.exports = class extends Command {
 
 	async run(message, [...params]) {
 		this.client.guilds.forEach((guild, id) => {
-			let path = __dirname + '/../../import/' + id + '.json';
+			let path = Path.join(__dirname, '/../../import/' + id + '.json');
+			path = Path.normalize(path);
 			if (fs.existsSync(path)) {
 				let oldConfig = JSON.parse(fs.readFileSync(path, 'utf8'));
 				if (Array.isArray(oldConfig)) {
