@@ -1,6 +1,6 @@
 # Growth Tracker
 
-A discord bot for tracking how your server grows over time
+A discord bot for tracking how your server grows over time (used by over 2500 servers)
 
 ## Getting Started
 
