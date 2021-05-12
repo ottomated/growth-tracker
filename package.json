@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "chart.js": "^2.8.0",
+    "chart.js": "^2.9.4",
     "chartjs-node": "^1.7.1",
     "discord.js": "github:discordjs/discord.js",
     "klasa": "github:dirigeants/klasa",
